@@ -1,0 +1,35 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1.25fr 9fr;
+    height: 100vh;
+}
+
+.header {
+    background-color: rgb(174, 125, 0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.content {
+    background-color: rgb(255, 244, 196);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+img {
+    width: 125px;
+    height: 200px;    
+}

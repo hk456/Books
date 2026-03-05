@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>LIBRARY</h1>
+    </div>
+    <div class="content">
+      <div class="book">
+        <img src="covers/tokyoghoulcoverart.jpeg" alt="book" class="cover-art">
+        <div class="info">
+          <div class="name">Tokyo Ghoul</div>
+          <div class="author">Sui Ishida</div>
+          <div class="status">
+            <label for="read-status">Read Status: </label>
+            <select name="status" id="read-status">
+              <option value="read">Read</option>
+              <option value="not-read">Not Read</option>
+              <option value="reading">Reading</option>
+            </select>
+          </div>
+        </div> 
+      </div>
+      <div class="book">
+        <img src="covers/firepunchcoverart.jpg" alt="book" class="cover-art">
+        <div class="info">
+          <div class="name">Fire Punch</div>
+          <div class="author">Tatatsuki Fujimoto</div>
+          <div class="status">
+            <label for="read-status">Read Status: </label>
+            <select name="status" id="read-status">
+              <option value="read">Read</option>
+              <option value="not-read">Not Read</option>
+              <option value="reading">Reading</option>
+            </select>
+          </div>
+        </div> 
+      </div>
+      <div class="book">
+        <img src="covers/Blue_Box_Volume_6.jpg" alt="book" class="cover-art">
+        <div class="info">
+          <div class="name">Blue Box</div>
+          <div class="author">Kouji Miura</div>
+          <div class="status">
+            <label for="read-status">Read Status: </label>
+            <select name="status" id="read-status">
+              <option value="read">Read</option>
+              <option value="not-read">Not Read</option>
+              <option value="reading">Reading</option>
+            </select>
+          </div>
+        </div> 
+      </div>
+      <div class="add" id="add">
+        <div class="add-btn">
+          <button type="button" id="add-book">
+            <svg viewBox="-15 -15 30 30" width="100" height="100">
+              <circle r="15" /> 
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <script src="app.js"></script>
+</body>
+</html>
