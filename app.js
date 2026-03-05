@@ -32,11 +32,17 @@ function addBookToLibrary(obj) {
 }
 
 
-// first lets read our current html to add objects to our array 
-// then clear it all in the html
-// then loop through our array to then render it all on the html 
-// then keep an eye on the event listeners of each book, and do action of addition and deletion of the book accordingly 
-// then we go back in our game loop to rendering all the things back again... but i dont want this to be a loop... i want to attach the required functions that will implement the change of re-rendering when any such actions are performed
+// add button functionality
+const addBtn = document.getElementById("add-book");
+const dialog = document.querySelector("dialog");
+const submitBtn = document.querySelector("dialog button");
 
-// add event listeners to all the current books in our book list
+addBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
 
+submitBtn.addEventListener("click", () => {
+    dialog.close();
+});
+
+// delete button functionality in only the parent element of it all...
