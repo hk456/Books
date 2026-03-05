@@ -6,12 +6,12 @@
 
 .container {
     display: grid;
-    grid-template-rows: 1.25fr 9fr;
+    grid-template-rows: .5fr 10fr;
     height: 100vh;
 }
 
 .header {
-    background-color: rgb(174, 125, 0);
+    background-color: rgb(62, 62, 62);
     color: white;
     display: flex;
     flex-direction: column;
@@ -24,30 +24,74 @@
 }
 
 .content {
-    background-color: rgb(255, 244, 196);
     display: grid;
     width: 100vw;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fit, 50%);
+    grid-template-rows: repeat(auto-fit, 70%);
     padding: .5rem;
+    gap: .5rem;
+}
+
+.info {
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-weight: 700;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .book {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: .5rem;
-    gap: 16px;
+    gap: 2.5rem;
+    box-shadow: 4px 4px 15px -8px black;
+}
+
+.status > select {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: .25rem;
+    font-size: 1rem;
+}
+
+select:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 400ms;
 }
 
 img {
     width: 60%;
     height: 70%;    
+    box-shadow: 4px 4px 2px 3px rgb(0, 10, 40);
+    border-radius: 7px;
 }
 
 .add-btn {
     width: 100%;
     height: 100%;
+    box-shadow: 4px 4px 15px -8px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-book {
+    border: none;
+    background-color: black;
+    border-radius: 10px;
+}
+
+#add-book:hover {
+    background-color: grey;
+    transition-duration: 400ms;
+}
+
+#add-book:active {
+    background-color: rgb(218, 218, 218);
 }
 

@@ -2,7 +2,13 @@
 let myLibrary = [];
 
 // some default additions of objects into the array
-book1 = new Book(crypto.randomUUID(), "Tokyo Ghoul", "Sui Ishida", "")
+book1 = new Book(crypto.randomUUID(), "Tokyo Ghoul", "Sui Ishida", "Not Read");
+book2 = new Book(crypto.randomUUID(), "Fire Punch", "Tatatsuki Fujimoto", "Not Read");
+book3 = new Book(crypto.randomUUID(), "Blue Box", "Kouji Miura", "Not Read");
+
+myLibrary.push(book1);
+myLibrary.push(book2);
+myLibrary.push(book3);
 
 // the constructor for the books
 function Book(id, name, authorName, readingStatus) {
@@ -33,3 +39,4 @@ function addBookToLibrary(obj) {
 // then we go back in our game loop to rendering all the things back again... but i dont want this to be a loop... i want to attach the required functions that will implement the change of re-rendering when any such actions are performed
 
 // add event listeners to all the current books in our book list
+
