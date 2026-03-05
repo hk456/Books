@@ -12,7 +12,7 @@
     <div class="header">
       <h1>LIBRARY</h1>
     </div>
-    <div class="content">
+    <div class="content" id="content">
       <div class="book">
         <img src="covers/tokyoghoulcoverart.jpeg" alt="book" class="cover-art">
         <div class="info">
@@ -22,7 +22,7 @@
             <label for="read-status">Read Status: </label>
             <select name="status" id="read-status">
               <option value="read">Read</option>
-              <option value="not-read">Not Read</option>
+              <option value="not-read" selected>Not Read</option>
               <option value="reading">Reading</option>
             </select>
           </div>
@@ -37,7 +37,7 @@
             <label for="read-status">Read Status: </label>
             <select name="status" id="read-status">
               <option value="read">Read</option>
-              <option value="not-read">Not Read</option>
+              <option value="not-read" selected>Not Read</option>
               <option value="reading">Reading</option>
             </select>
           </div>
@@ -52,7 +52,7 @@
             <label for="read-status">Read Status: </label>
             <select name="status" id="read-status">
               <option value="read">Read</option>
-              <option value="not-read">Not Read</option>
+              <option value="not-read" selected>Not Read</option>
               <option value="reading">Reading</option>
             </select>
           </div>
@@ -61,8 +61,10 @@
       <div class="add" id="add">
         <div class="add-btn">
           <button type="button" id="add-book">
-            <svg viewBox="-15 -15 30 30" width="100" height="100">
-              <circle r="15" /> 
+            <svg viewBox="-50 -50 100 100" width="100" height="100" fill="black">
+              <circle r="40" fill="none" stroke-width="3" stroke="white" /> 
+              <path d="M 0, -20 L 0, 20" stroke="white" stroke-width="5" />
+              <path d="M -20, 0 L 20, 0" stroke="white" stroke-width="5" />
             </svg>
           </button>
         </div>
