@@ -26,8 +26,8 @@
 .content {
     display: grid;
     width: 100vw;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fit, 70%);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 70%));
     padding: .5rem;
     gap: .5rem;
 }
@@ -98,8 +98,8 @@ img {
 dialog {
     position: absolute;
     top: 10%;
-    left: 40%;
-    background-color: black;
-    color: white;
+    left: 35%;
     padding: 4px;
+    width: 30vw;
+    height: 40vh;
 }
