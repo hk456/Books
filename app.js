@@ -7,14 +7,22 @@ const content = document.getElementById("content");
 // the array for the books
 let myLibrary = [];
 
-// some default additions of objects into the array
-book1 = new Book(crypto.randomUUID(), "Tokyo Ghoul", "Sui Ishida", "Not Read");
-book2 = new Book(crypto.randomUUID(), "Fire Punch", "Tatatsuki Fujimoto", "Not Read");
-book3 = new Book(crypto.randomUUID(), "Blue Box", "Kouji Miura", "Not Read");
+// attach the ID's of these ones manually here
+// going through the HTML and adding the data onto here and ID onto there 
+const books = content.children;
+for(let el of books){
+    if(el.classList.contains('add')){
+        continue;
+    }
 
-myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3);
+    // get those name, author-name, reading-status(that's just... "Not Read" by default anw btw)
+    const infoDiv = el.querySelector(".info");
+    const name = infoDiv.querySelector(".name").textContent;
+    const authorName = infoDiv.querySelector(".author").textContent;
+    el.id = crypto.randomUUID();
+    let book = new Book(el.id, name, authorName, "Not Read");
+    myLibrary.push(book);
+}
 
 // the constructor for the books
 function Book(id, name, authorName, imgSource, readingStatus) {
@@ -41,6 +49,9 @@ function addBookToLibrary(obj) {
     bookDiv.classList.add('book');
 
     bookDiv.innerHTML = `
+        <div class="trash">
+          <svg viewBox="0 0 24 24"><title>trash-can-outline</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+        </div>
         <img src="${obj.imgSource}" alt="book" class="cover-art">
         <div class="info">
             <div class="name">${obj.name}</div>
@@ -58,6 +69,21 @@ function addBookToLibrary(obj) {
     content.insertBefore(bookDiv, content.lastElementChild);
 }
 
+// function for performing the deletion operation 
+function deleteBook(bookId) {
+    // get the element in the DOM using this ID
+
+
+
+    // search through the library array for the bookId
+    for(let i=0;i<myLibrary.length;i++){
+        if(myLibrary[i].id == bookId){
+            myLibrary.splice(i,i);
+            break;
+        }
+    }
+}
+
 // dialog box and form submission functionality
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -65,13 +91,26 @@ submitBtn.addEventListener("click", (e) => {
     const bookName = data.get("book-name");
     const authorName = data.get("author-name");
 
-    const fileInput = data.get("image-source");
-    const relativePath = `covers/${fileInput.files[0].name}`;
+    const fileInput = data.get("image-source"); 
+    const relativePath = 'covers/${fileInput.name}';
 
     const book = new Book(bookName, authorName, relativePath, "Not Read");
     addBookToLibrary(book);
     dialog.close();
 });
 
-
 // delete button functionality in only the parent element of it all...
+content.addEventListener('click', (e) => {
+    // check if the button clicked inside the content element is the trash button
+    const trashBtn = e.target.closest('.trash');
+
+    // if this is true
+    if(trashBtn){
+        // get the book Id
+        const bookCard = trashBtn.closest('.book');
+        const bookId = bookCard.getAttribute('data-id');
+
+        // perform the deletion operation
+        deleteBook(bookId);
+    }
+});

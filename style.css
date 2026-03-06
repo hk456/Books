@@ -42,12 +42,26 @@
 }
 
 .book {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: .5rem;
     gap: 2.5rem;
     box-shadow: 4px 4px 15px -8px black;
+}
+
+.trash svg {
+    width: 24px;
+    height: 24px;
+    fill: #ff4d4d;
+    cursor: pointer;
+}
+
+.trash {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
 
 .status > select {
